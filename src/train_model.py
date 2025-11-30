@@ -44,6 +44,10 @@ pipeline = Pipeline([
  
 # Train the model on the entire dataset
 pipeline.fit(X, y)
+
+# Create the folder 'model' if it does not exist
+import os
+os.makedirs("model", exist_ok=True)
  
 # Save the model to a file
 joblib.dump(pipeline, "model/sentiment_model.pkl")
